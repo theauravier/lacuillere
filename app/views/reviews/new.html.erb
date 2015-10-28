@@ -1,0 +1,14 @@
+
+<h1 class="text-center">Add a new review for <%= @restaurant.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :content, placeholder: "Quel kif" %>
+        <%= f.input :rating, collection: 1..5, prompt: "Bien ou bien?" %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
